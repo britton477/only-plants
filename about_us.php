@@ -6,13 +6,6 @@ include "database.php";
 $conn = OpenCon();
 $wall_paper = "only_plants.jpg";
 
-#SQL query to return the most recent temp and time stamp
-$current_temp = "SELECT temp, time_stamp FROM temp ORDER BY time_stamp DESC LIMIT 1";
-$result1 = $conn->query($current_temp);
-#SQL query to return the remaining temps
-$previous_temps = "SELECT temp, time_stamp FROM temp WHERE id NOT IN (SELECT MAX(id) FROM temp) ORDER BY id DESC LIMIT 10";
-$result2 = $conn->query($previous_temps);
-
 CloseCon($conn);
 
 ?>
@@ -127,23 +120,7 @@ CloseCon($conn);
     <div class="main">
       <!-- Title with border -->
       <h1>Welcome to OnlyPlants</h1>
-      <h2>Where the only thing that's wet is the soil!</h2>
-      <p>
-        <?php
-          # PHP if statement to echo the current temp in nice format
-          if ($result1->num_rows > 0) {
-            $row = $result1->fetch_assoc();
-            echo "<h3>Current temp: ".$row['temp']."&#8451"." at ". $row['time_stamp']."</h3>";
-          }
-
-          echo "<h3>Previous Temps:</h3>";
-          # PHP if statement to echo the previous temps in nice format
-          if ($result2->num_rows > 0) {
-            while($row = $result2->fetch_assoc()) {
-              echo "<h3>".$row['temp']."&#8451"." at ". $row['time_stamp']."</h3>";
-            }
-          }?>
-      </p>
+      <h2>About Us...</h2>
     </div>
     <!-- Clear the float -->
     <div class="clearfix"></div>
