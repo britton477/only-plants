@@ -1,5 +1,5 @@
 # Only-Plants
-Where the only thing thats wet is the soil!
+Where the only thing thats wet is the soil!  
 This progect is no longer active as continued on git labs --> https://gitlab.com/britton477/onlyplants-server
 
 A fun project where we are building a website to monitor the health of my friends plants 20 miles away.  
